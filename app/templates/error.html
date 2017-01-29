@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ERROR - Coffree</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="{{static_url('images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- awesome icon-->
+  <script src="https://use.fontawesome.com/26cf0f40c5.js"></script>
+
+</head>
+
+<body style="background-color: #f5f3f3">
+
+<div class="container-fluid">
+ {%if code =='incorr_usr' %}
+  <p style="font-size: 80px; text-align: center; padding-top:5%;">USERNAME NOT FOUND</p>
+ {% elif code == 'incorr_pw' %}
+  <p style="font-size: 80px; text-align: center; padding-top:5%;">INCORRECT PASSWORD</p>
+ {% else %}
+  <p style="font-size: 80px; text-align: center; padding-top:5%;">404 NOT FOUND</p>
+ {% end %}
+  <p style="font-size: 80px; text-align: center;"><img src="{{static_url('images/error.jpg')}}" align="middle"></p>
+</div>
+
+</body>
+</html>

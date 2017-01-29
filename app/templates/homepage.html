@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{!-- Document Settings --}}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{!-- Page Meta --}}
-    <title>{{ site.title }}</title>
-
-    {{!-- Mobile Meta --}}
+    <title>3 a.m. Lamp</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    {{!-- Brand icon --}}
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
-
-    {{!-- Styles'n'Scripts --}}
-    <link href="{{ site.baseurl }}/assets/fonts/iconfont/iconfont.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{{static_url('images/favicon.ico')}}">
+    <link href="{{static_url('templates/fonts/iconfont/iconfont.css')}}" rel="stylesheet" type="text/css">
     <link href="//cdn.bootcss.com/semantic-ui/2.2.2/components/icon.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/semantic-ui/2.2.2/components/grid.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/screen.css"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('templates/css/screen.css')}}"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    {{ content }}
-
+<div class="site-wrapper">
+  <div class="shot-container">
+  <div id="danmu"></div>
+  </div>
+  <div class="info-container">
+      <div class="info-content">
+      <img class="info-avatar" src="{{static_url('images/rubick.jpg')}}">
+      <div class="info-link">
+        <a class="info-icon extra" href="/code" target="_blank"><i class="code icon"></i></a>
+        <a class="info-icon extra" href="/stat" target="_blank"><i class="bar chart icon"></i></a>
+        <a class="info-icon extra" href="/fragment" target="_blank"><i class="puzzle icon"></i></a>
+        <a class="info-icon extra" href="http://blink-dagger.com:1314/dubhe"><i class="marker icon"></i></a>
+        <div style="width: 100px; height: 100px; float: left; margin: 0 20px;"></div>
+        <a class="info-icon" href="http://blink-dagger.com:8555"><i class="film icon"></i></a>
+        <a class="info-icon" href="https://blink-dagger.com:1990"><i class="iconfont python"></i></a>
+        <a class="info-icon extra" href="http://blink-dagger.com:2009" target="_blank"><i class="iconfont Rlogo" style="font-size:1.30em"></i></a>
+        <a class="info-icon extra" href="http://blink-dagger.com:2013" target="_blank"><i class="iconfont mongodb"></i></a>
+      </div>
+      </div>
+  </div>
+  </div>
   <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-  <script src="{{ site.url }}/assets/js/index.js"></script>
-  <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.danmu.js"></script>
+  <script type="text/javascript" src="{{static_url('templates/js/jquery.danmu.js')}}"></script>
   <script type="text/javascript">
     $("#danmu").danmu({
       height:'100%',
@@ -39,7 +48,7 @@
       right:0,
       danmuLoop:true,
       zindex :2,
-      speed:8500
+      speed:10000
     });
     $(document).ready(function(){  
       var Getdanmu = function() {
