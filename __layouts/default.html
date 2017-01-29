@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Page Meta --}}
+    <title>{{ site.title }}</title>
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
+
+    {{!-- Styles'n'Scripts --}}
+    <link href="{{ site.baseurl }}/assets/fonts/iconfont/iconfont.css" rel="stylesheet" type="text/css">
+    <link href="//cdn.bootcss.com/semantic-ui/2.2.2/components/icon.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/semantic-ui/2.2.2/components/grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl }}assets/css/screen.css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    {{ content }}
+
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+  <script src="{{ site.url }}/assets/js/index.js"></script>
+
+  {% include google_analytics.html %}
+  <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.danmu.js"></script>
+  <script type="text/javascript">
+    $("#danmu").danmu({
+      height:'100%',
+      width:'100%',
+      left:0,
+      top:5,
+      right:0,
+      danmuLoop:true,
+      zindex :2,
+      speed:8500
+    });
+    $(document).ready(function(){  
+      var Getdanmu = function() {
+        $.ajax({
+            method: "GET",
+            dataType: 'jsonp',
+            crossOrigin: true,
+            async: false,
+            jsonpCallback: 'callback',
+            data: {"danmu_collection":"Blog","max_danmu_id":0},
+            url:"http://blink-dagger.com:8555/danmu",
+            success:function(data){
+              console.log($('#danmu').data("nowTime"));
+              var danmuss = data['danmuss'];
+              for (var i = 0; i < danmuss.length; i++) {
+                try {
+                    var danmuLs = JSON.parse(danmuss[i]);
+                } catch (e) {
+                    continue;
+                }
+                $("#danmu").danmu("addDanmu",danmuLs);
+              }
+            }
+        });
+      };
+      Getdanmu();
+      $('#danmu').danmu('danmuStart');
+      var refresh = function() {
+        $('#danmu').data("nowTime",0);
+      }
+      var sync = setInterval(refresh, 15000);
+      $(".info-avatar").click(
+        function () { 
+            $('.shot-container').toggleClass("switch");
+            $('#danmu').toggle();
+            if($('#danmu').data("paused")){
+                $('#danmu').danmu('danmuResume');
+              }
+            else{
+                $('#danmu').danmu('danmuPause');
+              }
+          }
+        );
+    });
+  </script>
+</body>
+</html>
