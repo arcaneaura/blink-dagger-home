@@ -1,0 +1,28 @@
+# Site settings
+title: '3 a.m. Lamp'
+tagline: 'To find something interesting'  # A brief tagline for your site
+timezone: 
+destination: ./_site
+
+# Build settings
+encoding: UTF-8
+markdown: kramdown
+baseurl: # the subpath of your site, e.g. /blog/
+codeurl: /code/
+fragmenturl: /fragment/
+staturl: /stat/
+
+# Personal info
+avatar: https://res.cloudinary.com/teepublic/image/private/s--bvbzP2US--/b_rgb:fffffe,t_Heather%20Preview/c_limit,f_jpg,h_630,q_90,w_630/v1446242717/production/designs/289442_2.jpg
+email: charles.hzq@gmail.com
+github: https://github.com/arcaneaura
+weibo: 
+music:
+python: https://blink-dagger.com:1990
+rstudio: //blink-dagger.com:2009
+mongodb: //blink-dagger.com:2013
+dubhe: //blink-dagger.com:1314/dubhe
+coffree: //blink-dagger.com:8555 
+
+# Logo setting
+logocolor: '#000'
