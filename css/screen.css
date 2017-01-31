@@ -209,6 +209,12 @@ a:visited {
     text-align: center
 }
 
+@media screen and (max-width:767px) {
+    .logo-container:before {
+        font-size: 1.50em
+    }
+}
+
 .logo-container:after {
     content: '';
     background-color: rgba(0, 0, 0, .55)
