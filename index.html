@@ -16,7 +16,7 @@
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div id="danmu-window">
+<div id="danmuwindow">
   <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
 </div>
 <div class="main">
@@ -27,7 +27,7 @@
       <div class="info-content">
       <img class="info-avatar" src="images/jugg.jpeg">
       <div class="info-link">
-        <a id="danmu-input" class="info-icon extra"><i class="comments icon"></i></a>
+        <a id="danmuinput" class="info-icon extra"><i class="comments icon"></i></a>
         <a class="info-icon extra" href="/babble"><i class="puzzle icon"></i></a>
         <a class="info-icon extra" href="/dubhe" target="_blank"><i class="marker icon"></i></a>
         <a class="info-icon" href="/bit"><i class="code icon"></i></a>
@@ -95,10 +95,14 @@
               }
           }
         );
-    $( "#danmu-input" ).click(
-      function() {
-        $( "#danmu-window" ).dialog();
-    });
+      $('#danmuwindow').dialog({
+          autoOpen: false,
+          title: 'Basic Dialog'
+      });
+      $('#danmuinput').click(function() {
+          $('#danmuwindow').dialog('open');
+          return false;
+      });
   });
   </script>
 </body>
