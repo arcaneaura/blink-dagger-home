@@ -16,6 +16,9 @@
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div id="danmu-window">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
 <div class="main">
   <div class="logo-container">
   <div id="danmu"></div>
@@ -50,7 +53,7 @@
       zindex :2,
       speed:10000
     });
-    $(document).ready(function(){  
+    $(document).ready(function(){
       var Getdanmu = function() {
         $.ajax({
             method: "GET",
@@ -81,7 +84,7 @@
       }
       var sync = setInterval(refresh, 15000);
       $(".info-avatar").click(
-        function () { 
+        function () {
             $('.logo-container').toggleClass("switch");
             $('#danmu').toggle();
             if($('#danmu').data("paused")){
@@ -92,7 +95,11 @@
               }
           }
         );
+    $( "#danmu-input" ).click(
+      function() {
+        $( "#danmu-window" ).dialog();
     });
+  });
   </script>
 </body>
 </html>
