@@ -20,7 +20,11 @@
 </head>
 <body>
 <div id="danmuwindow">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+  <form>
+    <textarea style="resize:none" name="danmu" id="danmucontent" cols="30" rows="4" required></textarea><br>
+    <label for="user">用户ID</label>
+    <input type="text" name="user" id="user" value="" style='width:14em' required></input>
+  </form>
 </div>
 <div class="main">
   <div class="logo-container">
@@ -97,9 +101,34 @@
               }
           }
         );
+      function Senddanmu(){
+        if($.trim($('#user').val()) == '' | $.trim($('#danmucontent').val()) == ''){
+              alert('Input Error! 格式空白或错误！');
+           }
+        else{
+          var danmu = $.trim($('#danmucontent').val());
+          var user = $.trim($('#user').val());
+          var time = Math.floor(Math.random() * 80) + 1;
+          var object = {"text":danmu,"color":"black","size":"1","position":"0","danmu_collection":"Blog","user":user,"time":time};
+          $.ajax({
+              method: "POST",
+              dataType: 'json',
+              crossOrigin: true,
+              data: JSON.stringify(object),
+              url:"http://blink-dagger.com:8555/danmu",
+          });
+          location.reload(true);
+        }
+      };
       $('#danmuwindow').dialog({
           autoOpen: false,
-          title: 'Basic Dialog'
+          title: '现在的心情？',
+          height: 300,
+          width: 350,
+          modal: true,
+          buttons: {
+            "发送":Senddanmu
+        },
       });
       $('#danmuinput').click(function() {
           $('#danmuwindow').dialog('open');
