@@ -68,7 +68,7 @@
             async: false,
             jsonpCallback: 'callback',
             data: {"danmu_collection":"Blog","max_danmu_id":0},
-            url:"http://blinkdagger.io:8555/ent/danmu",
+            url:"https://blinkdagger.io/ent/danmu",
             success:function(data){
               console.log($('#danmu').data("nowTime"));
               var danmuss = data['danmuss'];
@@ -115,7 +115,7 @@
               dataType: 'json',
               crossOrigin: true,
               data: JSON.stringify(object),
-              url:"http://blinkdagger.io:8555/ent/danmu",
+              url:"https://blinkdagger.io/ent/danmu",
           });
           location.reload(true);
         }
