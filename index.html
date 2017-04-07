@@ -39,7 +39,7 @@
         <a class="info-icon extra" href="/dubhe" target="_blank"><i class="marker icon"></i></a>
         <a class="info-icon" href="/bit"><i class="code icon"></i></a>
         <div style="width: 100px; height: 100px; float: left; margin: 0 20px;"></div>
-        <a class="info-icon" href="http://blinkdagger.io:8555" target="_blank"><i class="film icon"></i></a>
+        <a class="info-icon" href="/ent" target="_blank"><i class="film icon"></i></a>
         <a class="info-icon extra" href="http://blinkdagger.io:1990" target="_blank"><i class="iconfont python"></i></a>
         <a class="info-icon extra" href="http://blinkdagger.io:2009" target="_blank"><i class="iconfont Rlogo"></i></a>
         <a class="info-icon extra" href="http://blinkdagger.io:2013" target="_blank"><i class="iconfont mongodb"></i></a>
@@ -68,7 +68,7 @@
             async: false,
             jsonpCallback: 'callback',
             data: {"danmu_collection":"Blog","max_danmu_id":0},
-            url:"http://blinkdagger.io:8555/danmu",
+            url:"http://blinkdagger.io:8555/ent/danmu",
             success:function(data){
               console.log($('#danmu').data("nowTime"));
               var danmuss = data['danmuss'];
@@ -115,7 +115,7 @@
               dataType: 'json',
               crossOrigin: true,
               data: JSON.stringify(object),
-              url:"http://blinkdagger.io:8555/danmu",
+              url:"http://blinkdagger.io:8555/ent/danmu",
           });
           location.reload(true);
         }
