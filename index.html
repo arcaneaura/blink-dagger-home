@@ -12,6 +12,8 @@
     <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" />
+    <script src="//cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css" />
     <link href="//cdn.bootcss.com/semantic-ui/2.2.2/components/icon.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/semantic-ui/2.2.2/components/grid.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/screen.css"/>
@@ -34,7 +36,7 @@
       <div class="info-content">
       <img class="info-avatar" src="images/jugg.jpeg">
       <div class="info-link">
-        <a id="danmuinput" class="info-icon extra"><div class="tooltip"><i class="comments icon"></i><span class="tooltiptext">发个弹幕吧？</span></div></a>
+        <a id="danmuinput" class="info-icon extra"><i class="comments icon"></i></a>
         <a class="info-icon extra" href="/babble"><i class="puzzle icon"></i></a>
         <a class="info-icon extra" href="/dubhe" target="_blank"><i class="marker icon"></i></a>
         <a class="info-icon" href="/bit"><i class="code icon"></i></a>
@@ -58,6 +60,11 @@
       danmuLoop:true,
       zindex :2,
       speed:10000
+    });
+    $("#danmuinput").qtip({ // Grab some elements to apply the tooltip to
+      content: {
+          text: '发个弹幕吧？'
+      }
     });
     $(document).ready(function(){
       var Getdanmu = function() {
