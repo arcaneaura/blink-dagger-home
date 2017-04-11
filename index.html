@@ -62,11 +62,11 @@
       speed:10000
     });
     $("#danmuinput").qtip({ // Grab some elements to apply the tooltip to
-      content: text: '发个弹幕吧？',
+      content: {
+        text: '发个弹幕吧？'
+      },
       position: {
-        my: 'top center',  // Position my top left...
-        at: 'top center', // at the bottom right of...
-        target: $('#danmuinput') // my target
+        my: 'top center'
       }
     });
     $(document).ready(function(){
