@@ -78,7 +78,7 @@
             method: "GET",
             dataType: 'jsonp',
             crossOrigin: true,
-            async: false,
+            async: true,
             jsonpCallback: 'callback',
             data: {"danmu_collection":"Blog","max_danmu_id":0},
             url:"https://blinkdagger.io/ent/danmu",
@@ -126,6 +126,7 @@
           $.ajax({
               method: "POST",
               dataType: 'json',
+              async: true,
               crossOrigin: true,
               data: JSON.stringify(object),
               url:"https://blinkdagger.io/ent/danmu",
