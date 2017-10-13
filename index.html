@@ -121,7 +121,7 @@
         else{
           var danmu = $.trim($('#danmucontent').val());
           var user = $.trim($('#user').val());
-          var time = Math.floor(Math.random() * 80) + 1;
+          var time = Math.floor(Math.random() * 100) + 1;
           var object = {"text":danmu,"color":"black","size":"1","position":"0","danmu_collection":"blog","user":user,"time":time};
           $.ajax({
               method: "POST",
