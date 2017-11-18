@@ -11,6 +11,7 @@
     <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css" />
     <link rel="stylesheet" type="text/css" href="css/screen.css"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -18,9 +19,9 @@
 <body>
 <div id="danmuwindow">
   <form align="left">
-    <textarea style="resize:none;width:100%;" name="danmu" id="danmucontent" rows=4 placeholder="#随手打点儿啥吧" required></textarea><br>
-    <label for="user">用户ID</label><br>
-    <input type="text" name="user" id="user" value="" style='width:100%' placeholder="#邮箱/用户名/昵称" required></input>
+    <textarea style="resize:none;width:100%;" name="danmu" id="danmucontent" rows=4 placeholder="#Type Comments" required></textarea><br>
+    <label for="user">User ID</label><br>
+    <input type="text" name="user" id="user" value="" style='width:100%' placeholder="#Who are you?" required></input>
   </form>
 </div>
 <div class="main">
@@ -59,7 +60,7 @@
     });
     $("#danmuinput").qtip({ // Grab some elements to apply the tooltip to
       content: {
-        text: '发条弹幕吧?'
+        text: 'Any Comments?'
       },
       position: {
         my: 'bottom center',
@@ -113,7 +114,7 @@
         );
       function Senddanmu(){
         if($.trim($('#user').val()) == '' | $.trim($('#danmucontent').val()) == ''){
-              alert('Input Error! 格式空白或错误！');
+              alert('Input Error!');
            }
         else{
           var danmu = $.trim($('#danmucontent').val());
@@ -133,12 +134,12 @@
       };
       $('#danmuwindow').dialog({
           autoOpen: false,
-          title: '封面留言',
+          title: 'Floating Comments',
           height: 300,
           width: 350,
           modal: true,
           buttons: {
-            "发送":Senddanmu
+            "Send":Senddanmu
         },
       });
       $('#danmuinput').click(function() {
