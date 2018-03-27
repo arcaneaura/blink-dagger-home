@@ -28,22 +28,37 @@
 <div class="main">
   <div class="logo-container">
   <div id="danmu"></div>
+    <div class="mobileShow mobileToggle">
+      <span style="font-size:30px;cursor:pointer;", id="clickToggle" onclick="openNav()">&#9776;</span>
+    </div>
+  <div id="mobilSide" class="sidenav">
+          <a id="danmuinput" class="info-icon"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+          <a class="info-icon" href="/babble"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
+          <a class="info-icon" href="/dubhe" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+          <a class="info-icon" href="/bit"><i class="fa fa-code" aria-hidden="true"></i></a>
+          <a class="info-icon" href="/ent" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
+          <a class="info-icon" href="http://blinkdagger.io:1990" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+          <a class="info-icon" href="http://blinkdagger.io:2009" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+          <a class="info-icon" href="http://blinkdagger.io:2013" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
+  </div>
   </div>
   <div class="info-container">
-      <div class="info-content">
+      <div class="mobileHide info-content">
       <img class="info-avatar" src="images/jugg.jpeg">
-      <div class="info-link">
-        <a id="danmuinput" class="info-icon extra"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-        <a class="info-icon extra" href="/babble"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
-        <a class="info-icon extra" href="/dubhe" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-        <a class="info-icon" href="/bit"><i class="fa fa-code" aria-hidden="true"></i></a>
-        <div style="width: 100px; height: 100px; float: left; margin: 0 20px;"></div>
-        <a class="info-icon" href="/ent" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
-        <a class="info-icon extra" href="http://blinkdagger.io:1990" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
-        <a class="info-icon extra" href="http://blinkdagger.io:2009" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i>
-</a>
-        <a class="info-icon extra" href="http://blinkdagger.io:2013" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
+        <div class="info-link">
+          <a id="danmuinput" class="info-icon extra"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="/babble"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="/dubhe" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+          <a class="info-icon" href="/bit"><i class="fa fa-code" aria-hidden="true"></i></a>
+          <div style="width: 100px; height: 100px; float: left; margin: 0 20px;"></div>
+          <a class="info-icon" href="/ent" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="http://blinkdagger.io:1990" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="http://blinkdagger.io:2009" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="http://blinkdagger.io:2013" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
+        </div>
       </div>
+      <div class="mobileShow info-content">
+        <img class="info-avatar" src="images/jugg.jpeg">
       </div>
   </div>
   </div>
@@ -148,6 +163,20 @@
           return false;
       });
   });
+
+  function openNav() {
+    document.getElementById("mobilSide").style.width = "138px";
+    document.getElementById("mobilSide").style.height = "248px";
+    document.getElementById("mobilSide").style.marginLeft = "10px";
+    document.getElementById("mobilSide").style.marginTop = "40px";
+    document.getElementById("clickToggle").onclick = function () {closeNav();};
+  }
+
+  function closeNav() {
+    document.getElementById("mobilSide").style.width = "0";
+    document.getElementById("mobilSide").style.height = "0";
+    document.getElementById("clickToggle").onclick = function () {openNav();};
+  }
   </script>
 </body>
 </html>
