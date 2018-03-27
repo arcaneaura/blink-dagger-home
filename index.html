@@ -62,16 +62,31 @@
   </div>
   <script type="text/javascript" src="js/jquery.danmu.js"></script>
   <script type="text/javascript">
-    $("#danmu").danmu({
-      height:'95%',
-      width:'100%',
-      left:0,
-      top:50,
-      right:0,
-      danmuLoop:true,
-      zindex :2,
-      speed:10000
-    });
+    if(screen.width > 960) {
+      $("#danmu").danmu({
+        height:'100%',
+        width:'100%',
+        left:0,
+        top:5,
+        right:0,
+        danmuLoop:true,
+        zindex :2,
+        speed:10000
+      });
+    }
+    else {
+      $("#danmu").danmu({
+        height:'94%',
+        width:'100%',
+        left:0,
+        top:40,
+        right:0,
+        danmuLoop:true,
+        zindex :2,
+        speed:10000
+      });
+
+    }
     $("#danmuinput").qtip({ // Grab some elements to apply the tooltip to
       content: {
         text: 'Any Comments?'
