@@ -245,9 +245,9 @@ a:visited {
 
 .mobileToggle {
     z-index: -1;
-    margin-top: 10px;
-    margin-left: 10px;
-    background: transparent;
+    padding-top: 10px;
+    padding-left: 10px;
+    background:transparent;
 }
 
 .mobileShow {
