@@ -19,7 +19,7 @@
 </head>
 <body>
 <div id="danmuwindow">
-  <form align="left">
+  <form align="center">
     <textarea style="resize:none;width:100%;" name="danmu" id="danmucontent" rows=4 placeholder="#Type Comments" required></textarea><br>
     <label for="user">Visitor Name</label><br>
     <input type="text" name="user" id="user" value="" style='width:100%' placeholder="#Who are you?" required></input>
@@ -29,7 +29,7 @@
   <div class="logo-container">
     <span class="mobileShow mobileToggle" style="font-size:30px;cursor:pointer;", id="clickToggle" onclick="openNav()">&#9776;</span>
     <div id="mobilSide" class="mobileShow sidenav">
-          <a id="danmuinput" class="info-icon"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+          <a id="danmuinputMobil" class="info-icon"><i class="fa fa-commenting" aria-hidden="true"></i></a>
           <a class="info-icon" href="/babble"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
           <a class="info-icon" href="/dubhe" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
           <a class="info-icon" href="/bit"><i class="fa fa-code" aria-hidden="true"></i></a>
@@ -87,7 +87,7 @@
       });
 
     }
-    $("#danmuinput").qtip({ // Grab some elements to apply the tooltip to
+    $("#danmuinput, #danmuinputMobil").qtip({ // Grab some elements to apply the tooltip to
       content: {
         text: 'Any Comments?'
       },
@@ -172,7 +172,7 @@
             "Send":Senddanmu
         },
       });
-      $('#danmuinput').click(function() {
+      $("#danmuinput, #danmuinputMobil").click(function() {
           $('#danmuwindow').dialog('open');
           return false;
       });
