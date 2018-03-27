@@ -133,7 +133,9 @@
         function () {
             $('.logo-container').toggleClass("switch");
             $('#danmu').toggle();
-            $('#clickToggle').toggle();
+            if(screen.width < 960) {
+              $('#clickToggle').toggle();
+            }
             if($('#danmu').data("paused")){
                 $('#danmu').danmu('danmuResume');
               }
