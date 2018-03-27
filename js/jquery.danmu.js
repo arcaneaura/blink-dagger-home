@@ -499,7 +499,7 @@ var cyntax = {
         top: 0,
         height: 360,
         width: 640,
-        zindex: 100,
+        zindex: 3,
         speed: 8000,
         sumTime: 65535,
         danmuLoop: false,
