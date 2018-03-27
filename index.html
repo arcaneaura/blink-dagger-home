@@ -87,18 +87,18 @@
       });
 
     }
-    $("#danmuinput, #danmuinputMobil").qtip({ // Grab some elements to apply the tooltip to
-      content: {
-        text: 'Any Comments?'
-      },
-      position: {
-        my: 'bottom center',
-        at: 'top center'
-      },
-      style: {
-        classes: 'qtip-blue qtip-shadow qtip-rounded'
-      }
-    });
+    // $("#danmuinput, #danmuinputMobil").qtip({ // Grab some elements to apply the tooltip to
+    //   content: {
+    //     text: 'Any Comments?'
+    //   },
+    //   position: {
+    //     my: 'bottom center',
+    //     at: 'top center'
+    //   },
+    //   style: {
+    //     classes: 'qtip-blue qtip-shadow qtip-rounded'
+    //   }
+    // });
     $(document).ready(function(){
       var Getdanmu = function() {
         $.ajax({
@@ -167,7 +167,7 @@
       $('#danmuwindow').dialog({
           autoOpen: false,
           title: 'Floating Comments',
-          height: 300,
+          height: 320,
           width: 350,
           modal: true,
           buttons: {
