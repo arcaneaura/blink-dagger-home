@@ -30,13 +30,13 @@
     <span class="mobileShow mobileToggle" style="font-size:30px;cursor:pointer;", id="clickToggle" onclick="openNav()">&#9776;</span>
     <div id="mobilSide" class="mobileShow sidenav">
           <a id="danmuinputMobil" class="info-icon"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-          <a class="info-icon" href="/babble"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
-          <a class="info-icon" href="/dubhe" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-          <a class="info-icon" href="/bit"><i class="fa fa-code" aria-hidden="true"></i></a>
-          <a class="info-icon" href="/ent" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
-          <a class="info-icon" href="http://blinkdagger.io:1990" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://babble.blinkdagger.io"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://dubhe.blinkdagger.io" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://bit.blinkdagger.io"><i class="fa fa-code" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://carefree.blinkdagger.io" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://jupyter.blinkdagger.io" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
           <a class="info-icon" href="http://blinkdagger.io:2009" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-          <a class="info-icon" href="http://blinkdagger.io:2013" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://mango.blinkdagger.io" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
     </div>
     <div id="danmu"></div>
   </div>
@@ -45,14 +45,14 @@
       <img class="info-avatar" src="images/jugg.jpeg">
         <div class="info-link">
           <a id="danmuinput" class="info-icon extra"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-          <a class="info-icon extra" href="/babble"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
-          <a class="info-icon extra" href="/dubhe" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-          <a class="info-icon" href="/bit"><i class="fa fa-code" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="https://babble.blinkdagger.io"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="https://dubhe.blinkdagger.io" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://bit.blinkdagger.io"><i class="fa fa-code" aria-hidden="true"></i></a>
           <div style="width: 100px; height: 100px; float: left; margin: 0 20px;"></div>
-          <a class="info-icon" href="/ent" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
-          <a class="info-icon extra" href="http://blinkdagger.io:1990" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+          <a class="info-icon" href="https://carefree.blinkdagger.io" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="https://jupyter.blinkdagger.io" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
           <a class="info-icon extra" href="http://blinkdagger.io:2009" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-          <a class="info-icon extra" href="http://blinkdagger.io:2013" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
+          <a class="info-icon extra" href="https://mango.blinkdagger.io" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="mobileShow info-content">
@@ -108,7 +108,7 @@
             async: true,
             jsonpCallback: 'callback',
             data: {"danmu_collection":"blog","max_danmu_id":0},
-            url:"https://blinkdagger.io/ent/danmu",
+            url:"https://carefree.blinkdagger.io/danmu",
             success:function(data){
               console.log($('#danmu').data("nowTime"));
               var danmuss = data['danmuss'];
@@ -159,7 +159,7 @@
               async: true,
               crossOrigin: true,
               data: JSON.stringify(object),
-              url:"https://blinkdagger.io/ent/danmu",
+              url:"https://carefree.blinkdagger.io/danmu",
           });
           location.reload(true);
         }
