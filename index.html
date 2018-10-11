@@ -155,10 +155,10 @@
           var object = {"text":danmu,"color":"black","size":"1","position":"0","danmu_collection":"blog","user":user,"time":time};
           $.ajax({
               method: "POST",
-              headers: {'Access-Control-Allow-Origin': '*' },
               dataType: 'json',
               async: true,
               crossOrigin: true,
+              crossDomain: true,
               data: JSON.stringify(object),
               url:"https://carefree.blinkdagger.io/danmu",
           });
