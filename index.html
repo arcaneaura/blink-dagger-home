@@ -20,9 +20,9 @@
 <body>
 <div id="danmuwindow">
   <form align="center">
-    <textarea style="resize:none;width:100%;" name="danmu" id="danmucontent" rows=4 placeholder="#Type Comments" required></textarea><br>
+    <textarea maxlength="64" style="resize:none;width:100%;" name="danmu" id="danmucontent" rows=4 placeholder="#Type Comments" required></textarea><br>
     <label for="user">Visitor Name</label><br>
-    <input type="text" name="user" id="user" value="" style='width:100%' placeholder="#Who are you?" required></input>
+    <input maxlength="30" type="text" name="user" id="user" value="" style='width:100%' placeholder="#Who are you?" required></input>
   </form>
 </div>
 <div class="main">
@@ -30,12 +30,12 @@
     <span class="mobileShow mobileToggle" style="font-size:30px;cursor:pointer;", id="clickToggle" onclick="openNav()">&#9776;</span>
     <div id="mobilSide" class="mobileShow sidenav">
           <a id="danmuinputMobil" class="info-icon"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-          <a class="info-icon" href="https://babble.blinkdagger.io"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
+<!--           <a class="info-icon" href="https://babble.blinkdagger.io"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a> -->
           <a class="info-icon" href="https://dubhe.blinkdagger.io" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
           <a class="info-icon" href="https://bit.blinkdagger.io"><i class="fa fa-code" aria-hidden="true"></i></a>
           <a class="info-icon" href="https://jollity.blinkdagger.io" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
           <a class="info-icon" href="https://jupyter.blinkdagger.io" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
-          <a class="info-icon" href="https://rstudio.blinkdagger.io" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+<!--           <a class="info-icon" href="https://rstudio.blinkdagger.io" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a> -->
           <a class="info-icon" href="https://mango.blinkdagger.io" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
     </div>
     <div id="danmu"></div>
@@ -45,13 +45,13 @@
       <img class="info-avatar" src="images/jugg.jpeg">
         <div class="info-link">
           <a id="danmuinput" class="info-icon extra"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-          <a class="info-icon extra" href="https://babble.blinkdagger.io"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a>
+<!--           <a class="info-icon extra" href="https://babble.blinkdagger.io"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></a> -->
           <a class="info-icon extra" href="https://dubhe.blinkdagger.io" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
           <a class="info-icon" href="https://bit.blinkdagger.io"><i class="fa fa-code" aria-hidden="true"></i></a>
           <div style="width: 100px; height: 100px; float: left; margin: 0 20px;"></div>
           <a class="info-icon" href="https://jollity.blinkdagger.io" target="_blank"><i class="fa fa-film" aria-hidden="true"></i></a>
           <a class="info-icon extra" href="https://jupyter.blinkdagger.io" target="_blank"><i class="fa fa-wrench" aria-hidden="true"></i></a>
-          <a class="info-icon extra" href="https://rstudio.blinkdagger.io" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+<!--           <a class="info-icon extra" href="https://rstudio.blinkdagger.io" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true"></i></a> -->
           <a class="info-icon extra" href="https://mango.blinkdagger.io" target="_blank"><i class="fa fa-database" aria-hidden="true"></i></a>
         </div>
       </div>
@@ -151,7 +151,7 @@
         else{
           var danmu = $.trim($('#danmucontent').val());
           var user = $.trim($('#user').val());
-          var time = Math.floor(Math.random() * 80) + 1;
+          var time = Math.floor(Math.random() * 160) + 1;
           var object = {"text":danmu,"color":"black","size":"1","position":"0","danmu_collection":"blog","user":user,"time":time};
           $.ajax({
               method: "POST",
